@@ -41,7 +41,7 @@ mserver <- processx::process$new(
   command = "minio", args = c("server", "minio_storage", "--console-address", "localhost:9090"),
   stdout = "", stderr = "2>&1"
 )
-``
+```
 
 This serves an S3 endpoint at local port 9000. You can the web interace for your min.io server at <http://localhost:9090/>.  The default login
 and password are both `minioadmin`.  In this case, the server alread has a bucket  with versioning turned on ("targets-versioned"), and a set of credentials ("testcreds"/"testcreds")
@@ -56,7 +56,6 @@ Now, build your projects in the R console:
 
 ```
 targets::tar_make()
-
 ```
 
 All targets should be skipped and the pipeline should be complete.
